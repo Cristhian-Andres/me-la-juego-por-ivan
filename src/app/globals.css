@@ -15,3 +15,16 @@ body {
 input[type="text"] {
   -webkit-appearance: none;
 }
+
+@keyframes float-left {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50%       { transform: translateY(-50%) translateX(-4px); }
+}
+
+@keyframes float-right {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50%       { transform: translateY(-50%) translateX(4px); }
+}
+
+.arrow-left  { animation: float-left  1.4s ease-in-out infinite; }
+.arrow-right { animation: float-right 1.4s ease-in-out infinite; }

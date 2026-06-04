@@ -1,24 +1,30 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#1D3B95] text-white mt-auto">
-      <div className="max-w-lg mx-auto px-4 py-6 flex flex-col items-center gap-3">
+    <footer className="bg-[#1D3B95] text-white mt-auto py-5 text-center">
         <p className="text-center text-sm leading-snug">
-          Me la juego por Iván y Aida
+            Me la juego por Iván y Aida
         </p>
         <p className="text-center text-sm font-semibold">
-          By ❤️ Team Cauca
+            By ❤️ Team Cauca
         </p>
-        <p className="text-center text-xs opacity-80">
-          © 2026 ·{' '}
-          <a
-            href="https://www.facebook.com/CHRISTHNN"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-2 hover:opacity-100 transition-opacity"
-          >
-            Cristhian Luna
-          </a>
-        </p>
+      <div className="flex items-center justify-center gap-4 text-xs text-white font-light">
+        <a
+          href="https://www.facebook.com/CHRISTHNN"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-gray-600 transition-colors"
+        >
+          Cristhian Luna
+        </a>
+        <span className="text-white">·</span>
+        <a
+          href="https://www.facebook.com/jordanminota"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-gray-600 transition-colors"
+        >
+          Jordan Minota
+        </a>
       </div>
     </footer>
   );
