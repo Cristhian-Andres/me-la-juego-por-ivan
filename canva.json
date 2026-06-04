@@ -1,0 +1,101 @@
+{
+  "canvas": {
+    "background_color": "#FFFFFF",
+    "width_aspect_ratio": 1,
+    "height_aspect_ratio": 1
+  },
+  "elements": [
+    {
+      "id": "text_1",
+      "type": "text",
+      "content": "SOY",
+      "color": "#1D3B95",
+      "font_style": "Sans-serif, infantil/casual, bordes redondeados, mayúsculas",
+      "font_weight": "Bold",
+      "text_alignment": "center",
+      "position": "top-center"
+    },
+    {
+      "id": "text_2",
+      "type": "text",
+      "content": "Y ME LA",
+      "color": "#1D3B95",
+      "font_style": "Sans-serif, infantil/casual, bordes redondeados, mayúsculas",
+      "font_weight": "Bold",
+      "text_alignment": "center",
+      "position": "middle-upper"
+    },
+    {
+      "id": "text_3",
+      "type": "text",
+      "content": "JUEGO",
+      "color": "#1D3B95",
+      "font_style": "Sans-serif, infantil/casual, bordes redondeados, mayúsculas",
+      "font_weight": "Bold",
+      "size": "Grande (destacado)",
+      "text_alignment": "center",
+      "position": "middle"
+    },
+    {
+      "id": "graphic_center",
+      "type": "icon",
+      "description": "Mano haciendo el símbolo de corazón coreano (dedos cruzados) con un corazón flotando arriba",
+      "colors": {
+        "hand_outline": "#1D3B95",
+        "heart": "#C4151C"
+      },
+      "position": "center"
+    },
+    {
+      "id": "text_4",
+      "type": "text",
+      "content": "POR LA",
+      "color": "#E5A922",
+      "font_style": "Sans-serif, geométrica, sólida, mayúsculas",
+      "font_weight": "Heavy/Black",
+      "text_alignment": "split-center (flanqueando el icono central)",
+      "position": "middle-lower"
+    },
+    {
+      "id": "text_5",
+      "type": "text",
+      "content": "VIDA",
+      "color": "#E5A922",
+      "font_style": "Sans-serif, geométrica, sólida, mayúsculas",
+      "font_weight": "Heavy/Black",
+      "size": "Muy Grande (principal)",
+      "text_alignment": "center",
+      "position": "lower"
+    },
+    {
+      "id": "text_6",
+      "type": "text",
+      "content": "con Iván",
+      "color": "#FFFFFF",
+      "outline_color": "#E5A922",
+      "font_style": "Script / Cursiva caligráfica, fluida, ligada",
+      "font_weight": "Medium-Bold",
+      "size": "Mediano",
+      "text_alignment": "center",
+      "position": "bottom-center (superpuesto a 'VIDA')"
+    },
+    {
+      "id": "decorations",
+      "type": "decorative_stars",
+      "description": "Estrellas de cuatro puntas (destellos) dispersas alrededor del diseño",
+      "colors_present": [
+        "#C4151C",
+        "#1D3B95",
+        "#7A2681",
+        "#E5A922"
+      ]
+    }
+  ],
+  "palette_reference": {
+    "azul_principal": "#1D3B95",
+    "amarillo_dorado": "#E5A922",
+    "rojo": "#C4151C",
+    "morado": "#7A2681",
+    "blanco": "#FFFFFF"
+  }
+}
