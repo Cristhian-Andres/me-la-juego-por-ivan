@@ -5,7 +5,7 @@ export default function Header() {
     <header className="bg-[#1B3DAE] text-white shadow-md sticky top-0 z-10">
       <div className="max-w-lg mx-auto px-4 py-3 flex items-center justify-between">
         <Link href="/" className="text-lg font-bold tracking-tight">
-          Soy y me la juego
+          Me la juego por Iván y Aida
         </Link>
         <Link
           href="/generar"

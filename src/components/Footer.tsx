@@ -3,8 +3,7 @@ export default function Footer() {
     <footer className="bg-[#1B3DAE] text-white mt-auto">
       <div className="max-w-lg mx-auto px-4 py-6">
         <p className="text-center text-sm mb-5 leading-snug">
-          Soy y me la juego<br />
-          por la vida con Iván
+          Me la juego por Iván y Aida
         </p>
         <div className="flex items-center justify-center gap-8">
           <a

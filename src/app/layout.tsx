@@ -3,8 +3,8 @@ import { fredokaOne } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Soy [Nombre] y me la juego",
-  description: "Crea tu imagen personalizada para la campaña 'Soy [Nombre] y me la juego por la vida con Iván'",
+  title: "Me la juego por Iván y Aida",
+  description: "Crea tu imagen personalizada y demuestra que te la juegas por la vida con Iván y Aida",
 };
 
 export const viewport: Viewport = {

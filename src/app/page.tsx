@@ -11,8 +11,8 @@ export default function Home() {
       <main className="flex-1 flex flex-col items-center max-w-lg mx-auto w-full px-4 py-8">
         {/* Hero */}
         <section className="text-center mb-8 w-full">
-          <h1 className="text-4xl font-bold text-[#1B3DAE] leading-tight mb-3">
-            Soy [Nombre]<br />y me la juego
+          <h1 className="text-4xl font-bold text-[#1D3B95] leading-tight mb-3">
+            Me la juego por Iván y Aida
           </h1>
           <p className="text-gray-600 text-base leading-relaxed">
             Personaliza tu imagen y demuestra que tú también te la juegas{' '}
