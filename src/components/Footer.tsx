@@ -9,7 +9,15 @@ export default function Footer() {
           By ❤️ Team Cauca
         </p>
         <p className="text-center text-xs opacity-80">
-          © 2026 · Cristhian Luna
+          © 2026 ·{' '}
+          <a
+            href="https://www.facebook.com/CHRISTHNN"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2 hover:opacity-100 transition-opacity"
+          >
+            Cristhian Luna
+          </a>
         </p>
       </div>
     </footer>

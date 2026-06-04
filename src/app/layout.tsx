@@ -9,6 +9,12 @@ const GA_ID = "G-XH4X7Y0PQ0";
 export const metadata: Metadata = {
   title: "Me la juego por Iván y Aida",
   description: "Crea tu imagen personalizada y demuestra que te la juegas por la vida con Iván y Aida",
+  icons: {
+    icon: [
+      { url: '/logo.png', type: 'image/png' },
+    ],
+    apple: '/logo.png',
+  },
 };
 
 export const viewport: Viewport = {
