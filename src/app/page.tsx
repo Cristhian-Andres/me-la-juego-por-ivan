@@ -16,7 +16,7 @@ export default function Home() {
           </h1>
           <p className="text-gray-600 text-base leading-relaxed">
             Personaliza tu imagen y demuestra que tú también te la juegas{' '}
-            <span className="text-[#C9961A] font-semibold">por la vida con Iván.</span>
+            <span className="text-[#E8401C] font-semibold">por la vida con Iván y Aida.</span>
           </p>
         </section>
 
@@ -24,7 +24,7 @@ export default function Home() {
         <div className="w-full max-w-xs rounded-3xl overflow-hidden shadow-2xl mb-8 border-4 border-blue-100">
           <Image
             src="/01-plantilla.jpg"
-            alt="Plantilla – Soy [nombre] y me la juego por la vida con Iván"
+            alt="Plantilla – Soy [nombre] y me la juego por la vida con Iván y Aida"
             width={540}
             height={540}
             className="w-full h-auto"
@@ -35,14 +35,14 @@ export default function Home() {
         {/* CTA */}
         <Link
           href="/generar"
-          className="w-full max-w-xs bg-[#1B3DAE] text-white text-xl font-bold py-5 px-6 rounded-2xl text-center hover:bg-[#162d8a] active:bg-[#111f5c] transition-colors shadow-xl"
+          className="w-full max-w-xs bg-[#1D3B95] text-white text-xl font-bold py-5 px-6 rounded-2xl text-center hover:bg-[#162d80] active:bg-[#0f2060] transition-colors shadow-xl"
         >
           ¡Crear mi imagen!
         </Link>
 
         {/* Steps */}
         <section className="mt-12 w-full">
-          <h2 className="text-xl font-bold text-[#1B3DAE] text-center mb-5">
+          <h2 className="text-xl font-bold text-[#1D3B95] text-center mb-5">
             ¿Cómo funciona?
           </h2>
           <ol className="space-y-3">
@@ -52,7 +52,7 @@ export default function Home() {
               { n: '3', label: 'Descarga o comparte directamente a WhatsApp e Instagram' },
             ].map(({ n, label }) => (
               <li key={n} className="flex items-center gap-4 bg-blue-50 rounded-2xl px-4 py-3">
-                <span className="w-10 h-10 bg-[#1B3DAE] text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
+                <span className="w-10 h-10 bg-[#1D3B95] text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
                   {n}
                 </span>
                 <p className="text-gray-700 text-base">{label}</p>
@@ -64,7 +64,7 @@ export default function Home() {
         {/* Second CTA */}
         <Link
           href="/generar"
-          className="mt-10 w-full max-w-xs bg-[#C9961A] text-white text-lg font-bold py-4 px-6 rounded-2xl text-center hover:bg-[#b8851a] active:bg-[#a37518] transition-colors shadow-lg"
+          className="mt-10 w-full max-w-xs bg-[#E8401C] text-white text-lg font-bold py-4 px-6 rounded-2xl text-center hover:bg-[#c93518] active:bg-[#b02e14] transition-colors shadow-lg"
         >
           Comenzar ahora →
         </Link>

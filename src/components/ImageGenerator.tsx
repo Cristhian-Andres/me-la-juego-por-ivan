@@ -36,20 +36,32 @@ export default function ImageGenerator() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const W = img.naturalWidth;
-    const H = img.naturalHeight;
-    canvas.width = W;
+    // Force minimum 1080 px so the output is always sharp regardless of the
+    // source image size. All positions are % of W/H so they scale automatically.
+    const MIN = 1080;
+    const scale = Math.max(MIN / img.naturalWidth, MIN / img.naturalHeight, 1);
+    const W = Math.round(img.naturalWidth  * scale);
+    const H = Math.round(img.naturalHeight * scale);
+    canvas.width  = W;
     canvas.height = H;
+
+    // High-quality smoothing for both image scaling and text
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
 
     // ── 1. White background ──────────────────────────────────────────────────
     ctx.fillStyle = '#FFFFFF';
     ctx.fillRect(0, 0, W, H);
 
     // ── 2. Original image — only the bottom section (hand + POR LA VIDA) ────
-    // SPLIT: where we start drawing the original image (hand + POR LA VIDA).
-    // Lower = hand appears higher on the canvas.
-    const SPLIT = Math.floor(H * 0.46);
-    ctx.drawImage(img, 0, SPLIT, W, H - SPLIT, 0, SPLIT, W, H - SPLIT);
+    // Source coords use the original image dimensions; dest coords use scaled canvas.
+    const SPLIT    = Math.floor(H * 0.46);
+    const srcSplit = Math.floor(img.naturalHeight * 0.46);
+    ctx.drawImage(
+      img,
+      0, srcSplit, img.naturalWidth, img.naturalHeight - srcSplit, // source
+      0, SPLIT,    W,               H - SPLIT,                     // destination (scaled)
+    );
 
     // ── 3. Sparkle decorations (upper section) ───────────────────────────────
     for (const sp of SPARKLES) {
@@ -63,7 +75,7 @@ export default function ImageGenerator() {
 
     // "SOY"
     ctx.fillStyle = BLUE;
-    ctx.font = `400 ${Math.floor(H * 0.078)}px ${fontFamily}, 'Lilita One', cursive`;
+    ctx.font = `400 ${Math.floor(H * 0.078)}px ${fontFamily}, 'Chewy', cursive`;
     ctx.fillText('SOY', W / 2, H * 0.078);
 
     // NAME (custom) or placeholder
@@ -72,25 +84,25 @@ export default function ImageGenerator() {
       let fontSize = Math.floor(H * 0.125);
       let tw: number;
       do {
-        ctx.font = `400 ${fontSize}px ${fontFamily}, 'Lilita One', cursive`;
+        ctx.font = `400 ${fontSize}px ${fontFamily}, 'Chewy', cursive`;
         tw = ctx.measureText(displayName).width;
         if (tw > W * 0.84) fontSize -= 3;
       } while (tw > W * 0.84 && fontSize > 40);
       ctx.fillStyle = BLUE;
       ctx.fillText(displayName, W / 2, H * 0.205);
     } else {
-      ctx.font = `400 ${Math.floor(H * 0.048)}px ${fontFamily}, 'Lilita One', cursive`;
+      ctx.font = `400 ${Math.floor(H * 0.048)}px ${fontFamily}, 'Chewy', cursive`;
       ctx.fillStyle = '#B0BEC5';
       ctx.fillText('TU NOMBRE', W / 2, H * 0.205);
     }
 
     // "Y ME LA"
     ctx.fillStyle = BLUE;
-    ctx.font = `400 ${Math.floor(H * 0.058)}px ${fontFamily}, 'Lilita One', cursive`;
+    ctx.font = `400 ${Math.floor(H * 0.058)}px ${fontFamily}, 'Chewy', cursive`;
     ctx.fillText('Y ME LA', W / 2, H * 0.305);
 
     // "JUEGO"
-    ctx.font = `400 ${Math.floor(H * 0.112)}px ${fontFamily}, 'Lilita One', cursive`;
+    ctx.font = `400 ${Math.floor(H * 0.112)}px ${fontFamily}, 'Chewy', cursive`;
     ctx.fillText('JUEGO', W / 2, H * 0.400);
 
     setCanDownload(!!displayName);
@@ -162,7 +174,7 @@ export default function ImageGenerator() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Tu nombre aquí..."
-            className="flex-1 px-4 py-3 text-xl border-2 border-blue-200 rounded-xl focus:outline-none focus:border-[#1B3DAE] text-center font-bold uppercase tracking-widest bg-white"
+            className="flex-1 px-4 py-3 text-xl border-2 border-blue-200 rounded-xl focus:outline-none focus:border-[#1D3B95] text-center font-bold uppercase tracking-widest bg-white"
             maxLength={15}
             autoComplete="off"
             autoCapitalize="characters"
@@ -185,7 +197,7 @@ export default function ImageGenerator() {
       <div className="w-full rounded-2xl overflow-hidden shadow-xl relative bg-gray-100 aspect-square">
         {isLoading && (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-            <div className="w-10 h-10 border-4 border-[#1B3DAE] border-t-transparent rounded-full animate-spin" />
+            <div className="w-10 h-10 border-4 border-[#1D3B95] border-t-transparent rounded-full animate-spin" />
           </div>
         )}
         <canvas ref={canvasRef} className="w-full h-auto block" />
@@ -195,7 +207,7 @@ export default function ImageGenerator() {
       <button
         onClick={handleDownloadOrShare}
         disabled={!canDownload}
-        className="w-full py-4 bg-[#1B3DAE] text-white text-xl font-bold rounded-2xl hover:bg-[#162d8a] active:bg-[#111f5c] transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-3 shadow-lg"
+        className="w-full py-4 bg-[#1D3B95] text-white text-xl font-bold rounded-2xl hover:bg-[#162d8a] active:bg-[#111f5c] transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-3 shadow-lg"
       >
         <Share2 size={22} />
         Descargar / Compartir

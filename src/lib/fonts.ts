@@ -1,6 +1,6 @@
-import { Lilita_One } from 'next/font/google';
+import { Chewy } from 'next/font/google';
 
-export const fredokaOne = Lilita_One({
+export const fredokaOne = Chewy({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
